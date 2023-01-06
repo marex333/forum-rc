@@ -25,4 +25,13 @@ public class CommonController {
         return "faq";
     }
 
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(){
+        return "login";
+    }
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String register(){
+        return "register";
+    }
 }
