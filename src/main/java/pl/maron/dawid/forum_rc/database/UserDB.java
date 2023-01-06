@@ -1,6 +1,7 @@
 package pl.maron.dawid.forum_rc.database;
 
 import org.springframework.stereotype.Component;
+import pl.maron.dawid.forum_rc.exceptions.UserLoginExistException;
 import pl.maron.dawid.forum_rc.model.User;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class UserDB implements IUserDAO {
     @Override
     public void persistUser(User user) {
         if (getUserByLogin(user.getLogin()) != null) {
-            return;
+            throw new UserLoginExistException();
         }
         this.users.add(user);
     }
