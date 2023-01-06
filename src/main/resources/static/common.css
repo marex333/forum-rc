@@ -7,9 +7,9 @@ body {
     font-family: "Quicksand";
     font-weight: bold;
     display: block;
-    height: 50px;
+    height: auto;
     padding-top: 10px;
-    padding-bottom: 75px;
+    padding-bottom: 25px;
     text-align: center;
 }
 #logo img{
@@ -33,6 +33,7 @@ body {
 .button:hover {
     background-color: #e01513;
     color: white;
-
-#menu {
+}
+#content{
+    padding: 15px;
 }

@@ -2,13 +2,22 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>login</title>
   <link rel="stylesheet" href="/common.css">
+  <link rel="stylesheet" href="/login.css">
 </head>
 <body>
 <div id="header">
   <div th:replace="~{fragments.html :: logo}"></div>
   <div th:replace="~{fragments.html :: menu}"></div>
+</div>
+    <div id="content">
+        <form method="post" id="login-form">
+            <input type="text" placeholder="Login" class="input" name="login">
+            <input type="password" placeholder="Password" class="input" name="password">
+            <input type="submit" value="OK" class="button">
+        </form>
+    </div>
 </div>
 </body>
 </html>
