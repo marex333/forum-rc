@@ -1,0 +1,38 @@
+body {
+    width: auto;
+    background: rgb(28,44,55);
+    background: linear-gradient(0deg, rgba(28,44,55,1) 0%, rgba(255,255,255,1) 100%);
+    background-attachment: fixed;
+}
+#header {
+    font-family: "Quicksand";
+    font-weight: bold;
+    display: block;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 75px;
+    text-align: center;
+}
+#logo img{
+    width: 380px;
+    text-align: center;
+}
+
+.button {
+    text-decoration: none;
+        color: #29363e;
+        font-size: 22px;
+        margin: 0 10px;
+        border: 2px solid #29363e;
+        border-radius: 10px;
+        padding: 2px 15px;
+
+        transition: all 1s;
+        -webkit-transition: all 1s;
+        -ms-transition: all 1s;
+
+        cursor: pointer;
+        background-color: white;
+}
+#menu {
+}
