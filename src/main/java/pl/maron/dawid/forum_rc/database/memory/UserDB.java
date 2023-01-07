@@ -7,6 +7,8 @@ import pl.maron.dawid.forum_rc.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 @Component
 public class UserDB implements IUserDAO {
     private final List<User> users = new ArrayList<>();
@@ -20,17 +22,17 @@ public class UserDB implements IUserDAO {
     }
 
     @Override
-    public User getUserByLogin(String login) {
+    public Optional<User> getUserByLogin(String login) {
         for (User user : this.users) {
             if(user.getLogin().equals(login))
-                return user;
+                return Optional.of(user);
         }
-        return null;
+        return Optional.empty();
     }
 
     @Override
     public void persistUser(User user) {
-        if (getUserByLogin(user.getLogin()) != null) {
+        if (getUserByLogin(user.getLogin()).isPresent()) {
             throw new UserLoginExistException();
         }
         this.users.add(user);

@@ -14,6 +14,8 @@ import pl.maron.dawid.forum_rc.model.User;
 import pl.maron.dawid.forum_rc.session.SessionObject;
 import pl.maron.dawid.forum_rc.validators.UserValidator;
 
+import java.util.Optional;
+
 @Controller
 public class AuthenticatorController {
     @Autowired
@@ -35,9 +37,10 @@ public class AuthenticatorController {
             e.printStackTrace();
             return "redirect:/login";
         }
-        User user = this.userDAO.getUserByLogin(login);
-        if (user != null && user.getPassword().equals(DigestUtils.md5Hex(password))) {
-            this.sessionObject.setUser(user);
+        Optional<User> userBox = this.userDAO.getUserByLogin(login);
+        if (userBox.isPresent() && userBox.get().getPassword().equals(DigestUtils.md5Hex(password))) {
+            userBox.get().setPassword(null);
+            this.sessionObject.setUser(userBox.get());
             return "redirect:/main";
         }
             return "redirect:/login";
@@ -46,5 +49,16 @@ public class AuthenticatorController {
     public String logout() {
         this.sessionObject.setUser(null);
         return "redirect:/login";
+    }
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String register(){
+        return "register";
+    }
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public String register(@RequestParam String name, @RequestParam String surname,
+                           @RequestParam String login, @RequestParam String password,
+                           @RequestParam String password2){
+
+        return "register";
     }
 }

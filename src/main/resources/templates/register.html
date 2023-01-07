@@ -4,11 +4,25 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/common.css">
+    <link rel="stylesheet" href="/login.css">
+    <script src="/validator.js"></script>
 </head>
 <body>
 <div id="header">
     <div th:replace="~{fragments.html :: logo}"></div>
-    <div th:replace="~{fragments.html :: menu}"></div>
+    <a href="/main" class="button">Strona Główna</a>
+    <a href="/contact" class="button">Kontakt</a>
+    <a href="/faq" class="button">FAQ</a>
+</div>
+<div id="content">
+    <form id="form" method="post" onsubmit="return validateRegisterForm()">
+        <input type="text" placeholder="Imię" class="input" id="name">
+        <input type="text" placeholder="Nazwisko" class="input" id="surname">
+        <input type="text" placeholder="Login" class="input" id="login">
+        <input type="password" placeholder="Hasło" class="input" id="password">
+        <input type="password" placeholder="Powtórz Hasło" class="input" id="password2">
+        <input type="submit" value="Zarejestruj" class="button">
+    </form>
 </div>
 </body>
 </html>

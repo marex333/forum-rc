@@ -7,10 +7,16 @@
     padding: 2px 15px;
     text-align: center;
 }
-#login-form {
+#form {
     text-align: center
 }
-#login-form input{
+#form input{
    display: block;
    margin: 4px auto;
+}
+#content{
+    text-align: center;
+}
+#register {
+    color: #ffffff;
 }

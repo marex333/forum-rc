@@ -37,10 +37,4 @@ public class CommonController {
         model.addAttribute("logged", this.sessionObject.isLogged());
         return "faq";
     }
-
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public String register(Model model){
-        model.addAttribute("logged", this.sessionObject.isLogged());
-        return "register";
-    }
 }
