@@ -1,6 +1,7 @@
-package pl.maron.dawid.forum_rc.database;
+package pl.maron.dawid.forum_rc.database.memory;
 
 import org.springframework.stereotype.Component;
+import pl.maron.dawid.forum_rc.database.IUserDAO;
 import pl.maron.dawid.forum_rc.exceptions.UserLoginExistException;
 import pl.maron.dawid.forum_rc.model.User;
 

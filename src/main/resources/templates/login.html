@@ -5,6 +5,7 @@
     <title>login</title>
   <link rel="stylesheet" href="/common.css">
   <link rel="stylesheet" href="/login.css">
+  <script src="/validator.js"></script>
 </head>
 <body>
 <div id="header">
@@ -12,9 +13,9 @@
   <div th:replace="~{fragments.html :: menu}"></div>
 </div>
     <div id="content">
-        <form method="post" id="login-form">
-            <input type="text" placeholder="Login" class="input" name="login">
-            <input type="password" placeholder="Password" class="input" name="password">
+        <form method="post" id="login-form" onsubmit="return validateLoginForm()">
+            <input type="text" placeholder="Login" class="input" name="login" id="login">
+            <input type="password" placeholder="Password" class="input" name="password" id="password">
             <input type="submit" value="OK" class="button">
         </form>
     </div>
